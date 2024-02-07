@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "0b884622-aad8-47de-8c8e-1b10efcc6635",
+		"name": "DeliveryEnv_15.2.3_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31529260",
+		"_collection_link": "https://solar-moon-640090.postman.co/workspace/Work_1~5f986f48-cab6-4809-b681-d552df2a89d1/collection/25373991-0b884622-aad8-47de-8c8e-1b10efcc6635?action=share&source=collection_link&creator=31529260"
+	},
+	"item": [
+		{
+			"name": "Create Users",
+			"item": [
+				{
+					"name": "SSL - IdmLogin - HQ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"try",
+									"{",
+									"var xmlTree = xml2Json(responseBody);",
+									"var ResponseCodeStatus = pm.variables.get(\"ResponseCodeStatus\");",
+									"var DeleteOldCollectionVariables = pm.variables.get(\"DeleteOldCollectionVariables\")",
+									"var LoginMachine = pm.collectionVariables.get(\"LoginMachine\");",
+									"",
+									"if(DeleteOldCollectionVariables ==\"true\" && LoginMachine != \"HQ\"){",
+									"       SetVariables(); ",
+									"    }",
+									"",
